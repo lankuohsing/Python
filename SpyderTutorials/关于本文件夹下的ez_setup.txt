@@ -1,0 +1,1 @@
+安装完anaconda后，要在anaconda prompt中运行ez_setup.py
