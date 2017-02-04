@@ -7,10 +7,13 @@ Created on Thu Jan 26 22:50:39 2017
 # Demo file for Spyder Tutorial
 # Hans Fangohr, University of Southampton, UK
 
+
 def hello():
     """Print "Hello World" and return None"""
     print("Laters World")
-    #print("Hello World2")
-
+    # print("Hello World2")
 # main program starts here
 hello()
+# %%
+hello()
+# %%
