@@ -17,7 +17,8 @@ y_ = tf.placeholder(tf.float32, [None, 10])
 cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y),
                                               reduction_indices=[1]))
 """
-cross_entropy = -tf.reduce_sum(y_*tf.log(y))
+#cross_entropy = -tf.reduce_sum(y_*tf.log(y))
+cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), reduction_indices=[1]))
 train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
 init = tf.initialize_all_variables()
 sess = tf.Session()
@@ -33,3 +34,5 @@ accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 print(sess.run(accuracy, feed_dict={x: mnist.test.images,
                                     y_: mnist.test.labels}))
 
+# 任务完成, 关闭会话.
+sess.close()
