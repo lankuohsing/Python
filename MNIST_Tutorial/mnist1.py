@@ -4,6 +4,9 @@ Created on Wed Feb 22 16:09:35 2017
 
 @author: lankuohsing
 """
+#==============================================================================
+# TensorFlow官方教程之利用softmax回归对MNIST数据集进行分类
+#==============================================================================
 #导入数据
 from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
