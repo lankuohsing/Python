@@ -5,10 +5,13 @@ Created on Tue Mar 21 22:57:14 2017
 @author: lankuohsing
 """
 import tensorflow as tf
+import os
 # Create some variables.
-weights = tf.Variable(tf.random_normal([784, 200], stddev=0.35),
-                      name="weights")
-biases = tf.Variable(tf.zeros([200]), name="biases")
+v1 = tf.Variable(tf.random_normal([784, 200], stddev=0.35),
+                      name="v1")
+v2 = tf.Variable(tf.zeros([200]), name="v2")
+BASE_DIR = os.getcwd() #获取当前文件夹的绝对路径
+
 
 # Add ops to save and restore all the variables.
 saver = tf.train.Saver()
@@ -17,7 +20,6 @@ saver = tf.train.Saver()
 # do some work with the model.
 with tf.Session() as sess:
   # Restore variables from disk.
-  saver.restore(sess, "/tmp2/model.ckpt")
+  saver.restore(sess, BASE_DIR+"/tmp1/model.ckpt")
   print ("Model restored.")
   # Do some work with the model
-  #print(v1)
