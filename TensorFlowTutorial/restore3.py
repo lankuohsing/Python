@@ -12,5 +12,5 @@ tf.reset_default_graph()
 with tf.Session() as sess:
     saver = tf.train.import_meta_graph(BASE_DIR+'/tmp3/file.meta')
     var = tf.global_variables()[0]
-    sess.run(tf.initialize_all_variables())
+    sess.run(tf.global_variables_initializer())
     print(sess.run(var))
