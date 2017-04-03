@@ -14,22 +14,18 @@
 # ==============================================================================
 
 """Builds the MNIST network.
-
 Implements the inference/loss/training pattern for model building.
-
 1. inference() - Builds the model as far as is required for running the network
 forward to make predictions.
 2. loss() - Adds to the inference model the layers required to generate loss.
 3. training() - Adds to the loss model the Ops required to generate and
 apply gradients.
-
 This file is used by the various "fully_connected_*.py" files and not meant to
 be run.
 """
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
-
 import math
 
 import tensorflow as tf
@@ -41,19 +37,17 @@ NUM_CLASSES = 10
 IMAGE_SIZE = 28
 IMAGE_PIXELS = IMAGE_SIZE * IMAGE_SIZE
 
-#尽可能地构件号图标，满足促使神经网络向前反馈并做出预测的要求
+
 def inference(images, hidden1_units, hidden2_units):
   """Build the MNIST model up to where it may be used for inference.
-
   Args:
     images: Images placeholder, from inputs().
     hidden1_units: Size of the first hidden layer.
     hidden2_units: Size of the second hidden layer.
-
   Returns:
     softmax_linear: Output tensor with the computed logits.
   """
-  # Hidden 1 第一层隐藏层
+  # Hidden 1
   with tf.name_scope('hidden1'):
     weights = tf.Variable(
         tf.truncated_normal([IMAGE_PIXELS, hidden1_units],
@@ -85,11 +79,9 @@ def inference(images, hidden1_units, hidden2_units):
 
 def loss(logits, labels):
   """Calculates the loss from the logits and the labels.
-
   Args:
     logits: Logits tensor, float - [batch_size, NUM_CLASSES].
     labels: Labels tensor, int32 - [batch_size].
-
   Returns:
     loss: Loss tensor of type float.
   """
@@ -102,18 +94,13 @@ def loss(logits, labels):
 
 def training(loss, learning_rate):
   """Sets up the training Ops.
-
   Creates a summarizer to track the loss over time in TensorBoard.
-
   Creates an optimizer and applies the gradients to all trainable variables.
-
   The Op returned by this function is what must be passed to the
   `sess.run()` call to cause the model to train.
-
   Args:
     loss: Loss tensor, from loss().
     learning_rate: The learning rate to use for gradient descent.
-
   Returns:
     train_op: The Op for training.
   """
@@ -131,12 +118,10 @@ def training(loss, learning_rate):
 
 def evaluation(logits, labels):
   """Evaluate the quality of the logits at predicting the label.
-
   Args:
     logits: Logits tensor, float - [batch_size, NUM_CLASSES].
     labels: Labels tensor, int32 - [batch_size], with values in the
       range [0, NUM_CLASSES).
-
   Returns:
     A scalar int32 tensor with the number of examples (out of batch_size)
     that were predicted correctly.

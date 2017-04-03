@@ -14,10 +14,10 @@
 # ==============================================================================
 
 """Trains and Evaluates the MNIST network using a feed dictionary."""
+
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
-
 # pylint: disable=missing-docstring
 import argparse
 import os.path
@@ -109,7 +109,7 @@ def do_eval(sess,
 def run_training():
   """Train MNIST for a number of steps."""
   # Get the sets of images and labels for training, validation, and
-  # test on MNIST.导入数据
+  # test on MNIST. 返回一个含有Dataset实例的字典
   data_sets = input_data.read_data_sets(FLAGS.input_data_dir, FLAGS.fake_data)
 
   # Tell TensorFlow that the model will be built into the default Graph.
