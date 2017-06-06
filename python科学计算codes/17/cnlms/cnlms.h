@@ -1,1 +1,0 @@
-void cnlms(double x[], int nx, double d[], int nd, double h[], int nh, double step, double u[], int nu);

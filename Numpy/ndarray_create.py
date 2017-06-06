@@ -27,3 +27,7 @@ a[1]=100
 print(a)
 print(d)
 
+print(c.dtype)
+
+v1=3.14
+v2=np.float64(v1)
