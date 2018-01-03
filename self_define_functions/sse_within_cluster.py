@@ -24,10 +24,21 @@ def get_SSE(points):
     points_mean=get_centroid(points)
     points_deviation=points-points_mean
     points_deviation_norm=np.linalg.norm(points_deviation,ord=2,axis=1,keepdims=True)
-    points_sse=np.sum(points_deviation_norm)/points_deviation_norm.shape[0]
+    points_square_error=np.square(points_deviation_norm)
+    points_sse=np.sum(points_square_error)
     return points_sse
+# In[]
 if __name__=="__main__":
 
     points=np.array([[1,2],[3,4],[5,6]])
+    points_sum=np.sum(points,axis=0)
+    points_mean=points_sum/points.shape[0]
+# In[]
+    """
+    points_deviation=points-points_mean
+    points_deviation_norm=np.linalg.norm(points_deviation,ord=2,axis=1,keepdims=True)
+    points_square_error=np.square(points_deviation_norm)
+    points_sse=np.sum(points_square_error)
+    """
     print(get_SSE(points))
 
