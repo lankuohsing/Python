@@ -13,7 +13,7 @@ def get_centroid(points):
     calculate the centroid of given points
     计算给定点集的几何中心
     """
-    points_sum=np.sum(points,axis=0)
+    points_sum=np.sum(points,axis=0,keepdims=True)
     points_mean=points_sum/points.shape[0]
     return points_mean
 def get_SSE(points):
@@ -30,11 +30,12 @@ def get_SSE(points):
 # In[]
 if __name__=="__main__":
 
-    points=np.array([[1,2],[3,4],[5,6]])
-    points_sum=np.sum(points,axis=0)
+    points=np.array([[1,3],[2,1],[4,6]])
+    """
+    points_sum=np.sum(points,axis=0,keepdims=True)
     points_mean=points_sum/points.shape[0]
 # In[]
-    """
+
     points_deviation=points-points_mean
     points_deviation_norm=np.linalg.norm(points_deviation,ord=2,axis=1,keepdims=True)
     points_square_error=np.square(points_deviation_norm)
