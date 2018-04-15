@@ -1,4 +1,3 @@
-# Python
-Study Python
-20170115
-aaa
+# Python Examples for New Learners
+
+
