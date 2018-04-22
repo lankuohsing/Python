@@ -9,7 +9,7 @@ import pandas as pd
 import numpy as np
 # In[]
 path='D:/Projects/Github/Python/pandas/read_and_write_file/csv/iris.csv'
-#header=0,index_col=0表示不将标题和序号读到数据矩阵中
+#header=0,index_col=0 第0行（列）作为列（行）标题
 iris_df=pd.read_csv(path,header=0,index_col=0,encoding='utf-8')
 iris_np=iris_df.iloc[:,0:4].as_matrix()
 iris_label=np.reshape(iris_df.iloc[:,4].as_matrix(),(-1,1))
