@@ -14,6 +14,7 @@ path = 'D:\Projects\Github\Python\h5py'
 os.chdir(path)
 # In[]
 # Load hdf5 dataset
+# In[]
 f = h5py.File('group_exam.hdf5', 'r')
 # In[]
 print([key for key in f.keys()])#python2 返回为list，python3 返回为view-like objects，不能直接查看
