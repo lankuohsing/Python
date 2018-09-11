@@ -8,6 +8,7 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 # In[]
 data = np.array([[-1, 2], [-0.5, 6], [0, 10], [1, 18]])#数据样例
+data2=10*np.array([[-1, 2], [-0.5, 6], [0, 10], [1, 18]])#数据样例
 feature_range=(0,1)#归一化的范围,类型为tuple
 # In[]
 """
@@ -24,4 +25,14 @@ print(scaler.data_max_)
 print(scaled_data)
 #print(scaler.data_range_)
 # In[]
-print(feature_range[0])
+#print(feature_range[0])
+# In[]
+scaled_data=(data-scaler.data_min_)/(scaler.data_max_-scaler.data_min_)
+print(scaled_data)
+# In[]
+scaled_data2=(data2-scaler.data_min_)/(scaler.data_max_-scaler.data_min_)
+print(scaled_data2)
+# In[]
+scaled_data3=scaler.transform(data2)
+
+print(scaled_data3)
