@@ -25,4 +25,5 @@ print(clf.best_params_)
 
 y_pred = clf.predict(iris.data)
 # In[]
+a=classification_report(y_true=iris.target, y_pred=y_pred)
 print("result:",classification_report(y_true=iris.target, y_pred=y_pred))
