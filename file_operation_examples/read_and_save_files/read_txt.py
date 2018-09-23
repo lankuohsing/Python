@@ -6,6 +6,7 @@ Created on Fri Sep 21 16:46:18 2018
 """
 # In[]
 """将整个文件读取到字符串中"""
+#f1 = open("txt_data.txt","r",encoding='UTF-8')  
 f1 = open("txt_data.txt","r")   #设置文件对象
 str1 = f1.read()
 f1.close() #关闭文件
