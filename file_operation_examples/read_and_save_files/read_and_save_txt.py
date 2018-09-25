@@ -42,3 +42,10 @@ for line in open("txt_data.txt","r"): #设置文件对象并读取每一行文�
 f4 = open("txt_data.txt","r")   #设置文件对象
 data4 = f4.readlines()  #直接将文件中按行读到list里，效果与方法2一样
 f4.close()             #关闭文件
+
+# In[]
+#若文件不存在，系统自动创建。'a'表示可连续写入到文件，保留原内容，在原内容之后写入。可修改该模式（'w+','w','wb'等）
+f = open("./txt_write.txt",'a')
+f.write("hello,sha")
+f.write("\n")
+f.close()
