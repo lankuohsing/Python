@@ -59,3 +59,10 @@ print(enc.fit([[0, 0, 3], [1, 1, 0], [0, 2, 1], [1, 0, 2]]))
 print(enc.n_values_)#每个特征对应的最大位数
 print(enc.transform([[0,1,4]]).toarray())
 print(enc.transform([[0,1,1]]).toarray())
+# In[]
+import numpy as np
+from Lan_OneHotEncoder import OneHotEncoder
+enc = OneHotEncoder()
+X = np.array([['Male', 1], ['Female', 3], ['Female', 2]])
+enc.fit(X)
+enc.transform(X)
