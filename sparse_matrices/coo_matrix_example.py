@@ -4,6 +4,7 @@ Created on Sat Oct 27 19:50:01 2018
 
 @author: lankuohsing
 """
+#coo_matrix无法进行常用的矩阵操作，除非将其转换为其他稀疏矩阵格式
 # In[]
 from scipy.sparse import coo_matrix
 import numpy as np
