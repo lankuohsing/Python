@@ -18,3 +18,5 @@ col  = np.array([0, 3, 1, 2])
 data = np.array([4, 5, 7, 9])
 a=coo_matrix((data, (row, col)), shape=(4, 4))
 b=a.toarray()
+# In[]
+c=scipy.sparse.lil_matrix(a)
