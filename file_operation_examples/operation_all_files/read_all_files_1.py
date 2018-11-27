@@ -15,5 +15,5 @@ def file_name(file_dir):
         print("dirs",dirs) #当前路径下所有子目录
         print("files",files) #当前路径下所有非目录子文件
 # In[]
-file_dir="./"
+file_dir="."
 file_name(file_dir)

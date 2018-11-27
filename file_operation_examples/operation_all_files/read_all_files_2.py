@@ -19,11 +19,12 @@ def file_name(file_dir):
         print("files",files) #当前路径下所有非目录子文件
         for file in files:
             if os.path.splitext(file)[1] == '.py':#找出扩展名为py的所有文件
-                L.append(os.path.join(root, file))
+#                L.append(os.path.join(root, file))
+                L.append(root+"\\"+file)
     return L
 
 
 #其中os.path.splitext()函数将路径拆分为文件名+扩展名
 # In[]
-file_dir="./"
+file_dir="."
 L=file_name(file_dir)
