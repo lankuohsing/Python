@@ -1,0 +1,6 @@
+# In[]
+import numpy as np
+# In[]
+a=np.array([1,3,2,6,5,4,7,9,8])
+c=-np.sort(-a)
+b=np.argsort(-a)
