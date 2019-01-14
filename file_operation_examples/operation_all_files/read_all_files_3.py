@@ -4,7 +4,9 @@ Created on Tue Nov 27 20:04:07 2018
 
 @author: lankuohsing
 """
-
+"""
+递归地获取某一个目录下所有子目录里面的所有文件的路径名称，文件路径名称包括了文件名和它的上面的路径名
+'''
 # -*- coding: utf-8 -*-
 # In[]
 import os
