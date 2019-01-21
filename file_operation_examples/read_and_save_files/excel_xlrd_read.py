@@ -7,6 +7,12 @@ Created on Wed Sep 26 20:03:40 2018
 
 # In[]
 import xlrd
+"""
+#这也是一种方式
+filename="test.xlsx"
+f=open(filename,'r',)
+workbook = xlrd.open_workbook(filename)
+"""
 workbook = xlrd.open_workbook(r'English Words Notes.xlsx')
 # In[]
 print(workbook.sheet_names()) # [u'sheet1', u'sheet2']
