@@ -33,13 +33,29 @@ for rect in rects:
     ax.text(x+0.2,1.01*height,str(height)+'W')
 #     print(x,height)
 
+# 字体
+font_ticks = {
+#    'family' : 'serif',
+    'color'  : 'black',
+    'weight' : 'normal',
+    'size'   : 10,
+    }
+font_label = {
+#            'family' : 'serif',
+    'color'  : 'black',
+    'weight' : 'normal',
+    'size'   : 20,
+    }
 #设置x轴的刻度
-ax.set_xticks(x_bar)
-ax.set_xticklabels(["第一季度","第二季度","第三季度","第四季度"])
 
+ax.set_xticks(x_bar)
+x_ticks=["第一季度","第二季度","第三季度","第四季度"]
+ax.set_xticklabels(x_ticks,fontdict=font_ticks)
+y_ticks=list(range(0,int(max(data)*1.1),5))
+ax.set_yticklabels(y_ticks,fontdict=font_ticks)
 #设置y轴的刻标注
-ax.set_ylabel("销量（单位：万件）")
-ax.set_xlabel("季度")
+ax.set_ylabel("销量（单位：万件）",fontdict=font_label)
+ax.set_xlabel("季度",fontdict=font_label)
 
 #是否显示网格
 ax.grid(True)
@@ -48,7 +64,7 @@ ax.grid(True)
 ax.set_ylim(0,28)
 
 #设置标题
-ax.set_title("2017年季度销售量统计")
+ax.set_title("2017年季度销售量统计",fontdict=font_label)
 
 #显示图表
 plt.show()
