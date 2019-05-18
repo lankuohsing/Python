@@ -65,6 +65,9 @@ ax.set_ylim(0,28)
 
 #设置标题
 ax.set_title("2017年季度销售量统计",fontdict=font_label)
-
+#保存图片
+plt.savefig("./"+"test"+".png",dpi=100)
 #显示图表
 plt.show()
+plt.close('all')
+
