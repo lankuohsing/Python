@@ -37,3 +37,5 @@ X1=np.dot(iris_data,V.T)#这样得到的结果和iris_transformed是一样的
 # In[]
 X=svd.inverse_transform(X1)
 a=iris_data-X
+# In[]
+print(float('inf')-1)
